@@ -78,7 +78,7 @@ void Decode(char *FName, FILE *arc)
 	memcpy(array, p + 2, n);
 	p += 2 + n;
 
-	memcpy(&atime, p, 8); //запоминаем время для восстановления
+	memcpy(&atime, p, 8); //Р·Р°РїРѕРјРёРЅР°РµРј РІСЂРµРјСЏ РґР»СЏ РІРѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёСЏ
 	p += 8;
 
 	memcpy(&mtime, p, 8);
@@ -197,12 +197,12 @@ void Decode(char *FName, FILE *arc)
 		fwrite(wbuf, 1, n, file);
 	}
 
-	DestroyTree(root); //освобождаем память
+	DestroyTree(root); //РѕСЃРІРѕР±РѕР¶РґР°РµРј РїР°РјСЏС‚СЊ
 	
 
 	fclose(file);
 
-	TimeBuf.actime = atime; //восстановление времени
+	TimeBuf.actime = atime; //РІРѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ РІСЂРµРјРµРЅРё
 	TimeBuf.modtime = mtime;
 	_utime64(FName, &TimeBuf);
 

@@ -106,8 +106,6 @@ void TreeToTable(list *root, unsigned char **CodesTable, unsigned int *CodesLeng
 
 	if (root)
 	{
-		//Хитрая схема		
-
 		if (root->left)
 		{
 			mask >>= len % 8;
